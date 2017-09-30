@@ -61,15 +61,11 @@ public class ControllerGrabObject : MonoBehaviour
         // 1
         objectInHand = collidingObject;
         collidingObject = null;
-
-        Debug.Log(objectInHand.name);
-
         // 2
         var joint = AddFixedJoint();
         joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
     }
 
-    // 3
     private FixedJoint AddFixedJoint()
     {
         FixedJoint fx = gameObject.AddComponent<FixedJoint>();
